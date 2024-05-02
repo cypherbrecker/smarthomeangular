@@ -1,0 +1,30 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .input-container {
+    margin-bottom: 16px; 
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  @media screen and (max-width: 600px) {
+    
+    .form-container {
+      margin-left: 8px; 
+      margin-right: 8px;
+    }
+    
+    .input-container {
+      margin-bottom: 12px; /* Mobilnézetre alkalmazott térköz */
+    }
+  }
+
+  mat-dialog-content, .action-buttons {
+    background-color: rgb(216, 216, 223); 
+  }

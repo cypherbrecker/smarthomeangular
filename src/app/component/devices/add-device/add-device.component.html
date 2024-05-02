@@ -1,0 +1,40 @@
+<h2 mat-dialog-title>{{ title }}</h2>
+<mat-divider></mat-divider>
+
+<mat-dialog-content [formGroup]="form">
+  <div class="form-container">
+    <div class="input-container">
+      <mat-form-field>
+        <mat-label>Eszköz elnevezése</mat-label>
+        <input matInput placeholder="Samsung Távirányító" formControlName="name" required>
+        <mat-error *ngIf="form.get('name')?.invalid || form.get('name')?.dirty || form.get('name')?.touched">Adj meg egy teljes nevet!</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="input-container">
+      <h4>Eszköz típusának kiválasztása</h4>
+      <mat-form-field>
+        <mat-label>Típus</mat-label>
+        <mat-select formControlName="type" name="type">
+          <mat-option *ngFor="let type of types" [value]="type">
+            {{type}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="input-container">
+      <mat-form-field>
+        <mat-label>Helyiség</mat-label>
+        <mat-select formControlName="room" name="room">
+          <mat-option *ngFor="let room of rooms" [value]="room">
+            {{room}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<div mat-dialog-actions class="action-buttons">
+  <button mat-raised-button color="accent" mat-dialog-close (click)="cancelRegistration()">Kilépés</button>
+  <button mat-raised-button color="primary" mat-dialog-close (click)="registerDevice()" [disabled]="form.invalid">{{buttonName}}</button>
+</div>

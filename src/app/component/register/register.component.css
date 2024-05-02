@@ -1,0 +1,52 @@
+body  {
+    background-color: #2a3447;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    margin-top: 35px;
+}
+
+.login-card {
+    width: 350px;
+    height: 300px;
+    text-align: center; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+    background-color: #2a3447; 
+    margin-bottom: 100px;
+}
+
+mat-card-title {
+    color:  white;
+    position: relative;
+    top: 14px;
+}
+
+
+/*input {
+    margin-bottom: 5px; 
+    border: none;
+    border-radius: 5px; 
+    padding: 8px; 
+    background-color: #e5e9ee;
+    color: #000000; 
+}*/
+
+.register-link {
+    display: block; 
+    margin-top: 10px; 
+    color: white; 
+    text-decoration: none; 
+  }
+
+
+  .inputfield {
+    width: 100%;
+}

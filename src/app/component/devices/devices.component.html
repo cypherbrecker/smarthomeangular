@@ -1,0 +1,92 @@
+
+<div class="devices-container">
+  <div class="row">
+    <div class="col-sm-6 col-md-">
+      
+    </div>
+  </div>
+
+
+  <div class="device-list">
+    
+    <!--<div class="device-item" *ngFor="let row of dataSource.data">-->
+    <div class="device-item" *ngFor="let row of dataSource?.data">
+      
+      <div class="device-details">
+       <!-- <div class="device-actions">-->
+        <div class="menudots">
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" class="menudots">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+        </div>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="configDevice(row)">
+              <mat-icon>edit</mat-icon>
+              <span>Konfigurálás</span>
+            </button>
+            <button mat-menu-item (click)="editDevice(row)">
+              <mat-icon>edit</mat-icon>
+              <span>Szerkesztés</span>
+            </button>
+            <button mat-menu-item (click)="deleteDevice(row)">
+              <mat-icon>delete</mat-icon>
+              <span>Törlés</span>
+            </button>
+          </mat-menu>
+       
+          
+       <ng-container *ngIf="row.type === 'Lámpa'">
+        <div *ngIf="row.datas && row.datas.power == 2" class="iconshow">
+          <img src="assets/lighton.png" alt="Lámpa bekapcsolva ikon">
+        </div>
+        <div *ngIf="row.datas && row.datas.power == 1" class="iconshow">
+          <img src="assets/lightoff.png" alt="Lámpa kikapcsolva ikon">
+        </div>
+      </ng-container>
+
+
+      <ng-container *ngIf="row.type === 'Klíma'">
+        <div *ngIf="row.datas && row.datas.power == 2" class="iconshow">
+          <img src="assets/climateon.png" alt="Klíma bekapcsolva ikon">
+        </div>
+        <div *ngIf="row.datas && row.datas.power == 1" class="iconshow">
+          <img src="assets/climateoff.png" alt="Klíma kikapcsolva ikon">
+        </div>
+      </ng-container>
+
+      
+        <p><strong>Név:</strong> {{ row.name }}</p>
+        <p><strong>Eszköz ID:</strong> {{ row.id }}</p>
+       <p><strong>Típus:</strong> {{ row.type }}</p> 
+      <!--- <p><strong>Létrehozva:</strong> {{ row.created }}</p> -->
+        <p><strong>Helyiség:</strong> {{ row.room }}</p>
+
+        <ng-container *ngIf="row.type === 'Lámpa'">
+          <div *ngIf="row.datas">
+            <p><strong>Fényerő:</strong> {{ row.datas.lightpower }}</p>  
+            <p><strong>Állapot: </strong> <span [ngStyle]="{ color: row.datas.power != 2 ? '#C9423F' : 'green' }">{{ row.datas.power == 2 ? 'Bekapcsolva' : 'Kikapcsolva' }}</span></p>
+          </div>
+          
+          </ng-container>
+
+        <ng-container *ngIf="row.type === 'Klíma'">
+          <div *ngIf="row.datas">
+            <p><strong>Hőmérséklet:</strong> {{ row.datas.temperature }}</p>
+            <p><strong>Állapot: </strong> <span [ngStyle]="{ color: row.datas.power != 2 ? '#C9423F' : 'green' }">{{ row.datas.power == 2 ? 'Bekapcsolva' : 'Kikapcsolva' }}</span></p>
+          </div>
+          
+          </ng-container>
+        
+        
+      </div>
+      
+    </div>
+    <mat-card class="add-doc text-center" (click)="addDevice()">
+      <mat-card-content>
+        Eszköz hozzáadása <br>
+        <img src="assets/plusdevice.png" alt="Eszköz hozzáadás ikon" width="70px" height="70px">
+      </mat-card-content>
+    </mat-card>
+  </div>  
+</div>
+

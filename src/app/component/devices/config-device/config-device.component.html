@@ -1,0 +1,44 @@
+<h2 mat-dialog-title>{{ title }}</h2>
+<mat-divider></mat-divider>
+
+<mat-dialog-content [formGroup]="form">
+  <div class="form-container">
+    <div *ngIf="type === 'Lámpa'">
+      <form [formGroup]="form">
+        <div formGroupName="datas">
+          <label for="lightpower">Fényerő:</label>
+          <input type="number" id="lightpower" formControlName="lightpower" min="10" max="100">
+        </div>
+      </form>
+      <form [formGroup]="form">
+        <div formGroupName="datas">
+          <label for="power">Állapot:</label>
+          <input type="number" id="power" formControlName="power" min="1" max="2">
+        </div>
+      </form>
+      <p>1: Kikapcsolás</p>
+      <p>2: Bekapcsolás</p>
+    </div>
+    <div *ngIf="type === 'Klíma'">
+      <form [formGroup]="form">
+        <div formGroupName="datas">
+          <label for="temperature">Hőmérséklet:</label>
+          <input type="number" id="temperature" formControlName="temperature" min="10" max="30">
+        </div>
+      </form>
+      <form [formGroup]="form">
+        <div formGroupName="datas">
+          <label for="power">Állapot:</label>
+          <input type="number" id="power" formControlName="power" min="1" max="2">
+        </div>
+      </form>
+      <p>1: Kikapcsolás</p>
+      <p>2: Bekapcsolás</p>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close (click)="cancelRegistration()">Kilépés</button>
+  <button mat-raised-button color="primary" mat-dialog-close (click)="registerDevice()">{{buttonName}}</button>
+</div>

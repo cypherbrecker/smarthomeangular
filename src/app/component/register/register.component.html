@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Smarthomeangular-reg</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <mat-card class="login-card">
+          <mat-card-title>Regisztráció</mat-card-title>
+          <mat-card-content>
+            <form>
+                <mat-form-field class="inputfield">
+                  <mat-label>Email</mat-label>
+                  <input matInput type="email" name="email" placeholder="Email" [(ngModel)]="email" required>
+                </mat-form-field>
+
+                <mat-form-field class="inputfield">
+                  <mat-label>Jelszó</mat-label>
+                  <input matInput type="password" name="password" placeholder="Jelszó" [(ngModel)]="password" required>
+                </mat-form-field>
+              
+              <button mat-flat-button color="primary" (click)="register()">Regisztráció</button>
+            </form>
+            <a class="register-link" href="/login">Van már fiókod?</a>
+          </mat-card-content>
+        </mat-card>
+      </div>
+</body>
+</html>

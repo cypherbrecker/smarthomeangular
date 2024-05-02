@@ -1,0 +1,22 @@
+.profile-container {
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+    background-color: #2f3b50;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 10px;
+    font-size: 17px;
+    display: flex;
+    min-width: 200px;
+    color: #688392;;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

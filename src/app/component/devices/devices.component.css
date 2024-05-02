@@ -1,0 +1,110 @@
+.add-doc{
+    margin: 5px;
+    width: 300px;
+    text-align: center; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    background-color: #454f61;
+}
+
+.mat-card:hover {
+    transform: scale(1.06);
+}
+
+mat-card-content {
+  top: 10px;
+  color: #688392;
+}
+
+
+table {
+    width: 100%;
+  }
+  
+.mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+  
+
+.devices-container {
+    padding: 20px;
+  }
+  
+
+
+  .device-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+  }
+  
+  .device-item {
+    
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5); 
+    width: calc(25% - 10px); 
+    height: 220px;
+    margin-top: 20px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    min-width: 250px;
+    background-color: #2f3b50; 
+    border-radius: 10px;
+  }
+
+
+  /*.device-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .device-item {
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }*/
+  
+  .device-details {
+    color: #688392;
+    flex-grow: 1;
+    padding-left: 10px;
+    padding-top: 5px;
+  }
+
+
+  
+  .device-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .menudots {
+    float: right;
+  }
+
+  .add-doc {
+ 
+    width: calc(25% - 10px);
+    height: 220px;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+    background-color: #2f3b50;
+    margin-top: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    min-width: 250px;
+  }
+  
+  .add-doc:hover, .device-item:hover {
+    transform: scale(1.06);
+  }
+
+
+  
